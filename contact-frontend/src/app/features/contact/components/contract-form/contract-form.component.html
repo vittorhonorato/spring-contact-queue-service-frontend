@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <app-input
+  formControlName="name"
+  label="nome">
+</app-input>
+
+  <app-input
+  formControlName="email"
+  label="E-mail">
+</app-input>
+
+<app-input
+  formControlName="subject"
+  label="Assunto">
+</app-input>
+
+<app-input
+  formControlName="message"
+  label="message"
+  [multiline]="true"
+  [rows]="4"
+  >
+</app-input>
+
+
+  <app-button label="enviar">
+
+  </app-button>
+</form>
+
+
+<app-loading [isLoading]="loading"></app-loading>
