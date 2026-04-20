@@ -23,9 +23,14 @@
 </app-input>
 
 
-  <app-button label="enviar">
-
-  </app-button>
+  <app-button
+      matTooltip="Há campos incorretos no formulário"
+      matTooltipPosition="left"
+      class="submit-button"
+      type="submit"
+      label="Enviar mensagem"
+      [disabled]="form.invalid">
+    </app-button>
 </form>
 
 

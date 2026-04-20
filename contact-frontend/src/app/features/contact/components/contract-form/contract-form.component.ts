@@ -30,6 +30,12 @@ export class ContractFormComponent {
 
   submit(): void {
 
+    if(this.form.invalid) {
+      this.form.markAllAsTouched();
+
+      return;
+    }
+
     this.loading = true;
 
     const payload: ContactRequest = {
@@ -42,7 +48,8 @@ export class ContractFormComponent {
     this.contactService.postContact(payload).subscribe({
       next: (response) => {
         this.loading = false;
-        this.notificationService.success('Contato enviado com sucesso. ' + response);
+        this.notificationService.success('Contato enviado com sucesso. Para mais informaçoes, consulte o time de T.I atráves do seu chamado: ' + response.id);
+        this.form.reset();
       },
       error: (err: HttpErrorResponse) => {
         this.loading = false;

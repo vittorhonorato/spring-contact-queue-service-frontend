@@ -15,6 +15,9 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { InputComponent } from './shared/components/input/input.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ListContactsPageComponent } from './features/contact/pages/list-contacts-page/list-contacts-page.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     ContractFormComponent,
     LoadingComponent,
     ButtonComponent,
-    InputComponent
+    InputComponent,
+    ListContactsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import {MatInputModule} from '@angular/material/input';
     MatProgressSpinnerModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
