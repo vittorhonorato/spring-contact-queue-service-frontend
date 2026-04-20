@@ -10,7 +10,7 @@ import { ContactDetailsResponse } from '../models/contact-details-response';
   providedIn: 'root'
 })
 export class ContactService {
-  private readonly baseUrl = `${API_CONFIG}`;
+  private readonly baseUrl = API_CONFIG.baseUrl;
 
   constructor(private readonly http: HttpClient) { }
 
@@ -19,10 +19,10 @@ export class ContactService {
   };
 
   getContact(): Observable<ContactDetailsResponse[]> {
-    return this.http.get<ContactDetailsResponse[]>(`${API_CONFIG.baseUrl}/sender-email`);
+    return this.http.get<ContactDetailsResponse[]>(`${this.baseUrl}/sender-email`);
   };
 
   getContactById(id: string): Observable<ContactDetailsResponse> {
-    return this.http.get<ContactDetailsResponse>(`${API_CONFIG.baseUrl}/sender-email`);
+    return this.http.get<ContactDetailsResponse>(`${this.baseUrl}/sender-email/${id}`);
   };
 }
