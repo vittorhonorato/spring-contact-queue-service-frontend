@@ -20,6 +20,7 @@ import { ListContactsPageComponent } from './features/contact/pages/list-contact
 import {MatTableModule} from '@angular/material/table';
 import { CreateContactPageComponent } from './features/contact/pages/create-contact-page/create-contact-page.component';
 import { ContactListComponent } from './features/contact/components/contact-list/contact-list.component';
+import { ContactSearchComponent } from './features/contact/components/contact-search/contact-search.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ContactListComponent } from './features/contact/components/contact-list
     InputComponent,
     ListContactsPageComponent,
     CreateContactPageComponent,
-    ContactListComponent
+    ContactListComponent,
+    ContactSearchComponent
   ],
   imports: [
     BrowserModule,

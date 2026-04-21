@@ -1,5 +1,12 @@
+<app-contact-search
+  [loading]="loading"
+  (searchById)="searchContactById($event)"
+  (resetSearch)="loadAllContacts()">
+</app-contact-search>
+
+<app-loading [isLoading]="loading"></app-loading>
+
 <app-contact-list
   [contacts]="contacts"
   [displayedColumns]="displayedColumns">
 </app-contact-list>
-
