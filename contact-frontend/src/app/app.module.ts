@@ -18,6 +18,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ListContactsPageComponent } from './features/contact/pages/list-contacts-page/list-contacts-page.component';
 import {MatTableModule} from '@angular/material/table';
+import { CreateContactPageComponent } from './features/contact/pages/create-contact-page/create-contact-page.component';
+import { ContactListComponent } from './features/contact/components/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MatTableModule} from '@angular/material/table';
     LoadingComponent,
     ButtonComponent,
     InputComponent,
-    ListContactsPageComponent
+    ListContactsPageComponent,
+    CreateContactPageComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

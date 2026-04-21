@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { ContactDetailsResponse } from '../../models/contact-details-response';
-import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListContactsPageComponent {
   displayedColumns: string[] = ['id', 'name', 'email', 'subject', 'status', 'createdAt'];
-  dataSource = new MatTableDataSource<ContactDetailsResponse>([]);
+  contacts: ContactDetailsResponse[] = [];
 
   constructor(private readonly contactService: ContactService) {}
 
@@ -23,8 +22,7 @@ export class ListContactsPageComponent {
   getAll() {
     this.contactService.getContact().subscribe({
       next: (response: ContactDetailsResponse[]) => {
-        console.log(response);
-        this.dataSource.data = response;
+        this.contacts = response;
       },
       error: (err) => {
 
