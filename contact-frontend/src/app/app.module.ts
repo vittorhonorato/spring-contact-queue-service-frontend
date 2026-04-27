@@ -21,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import { CreateContactPageComponent } from './features/contact/pages/create-contact-page/create-contact-page.component';
 import { ContactListComponent } from './features/contact/components/contact-list/contact-list.component';
 import { ContactSearchComponent } from './features/contact/components/contact-search/contact-search.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ContactSearchComponent } from './features/contact/components/contact-se
     ListContactsPageComponent,
     CreateContactPageComponent,
     ContactListComponent,
-    ContactSearchComponent
+    ContactSearchComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { ContactSearchComponent } from './features/contact/components/contact-se
     MatFormFieldModule,
     MatInputModule,
     MatTooltipModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

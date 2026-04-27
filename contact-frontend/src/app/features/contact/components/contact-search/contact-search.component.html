@@ -1,22 +1,22 @@
 <form class="search-form" [formGroup]="form" (ngSubmit)="submit()">
   <app-input
     class="search-input"
-    formControlName="id"
-    label="Buscar por ID"
-    placeholder="Digite o ID do contato">
+    formControlName="query"
+    label="Buscar por ID ou E-mail"
+    placeholder="Digite o ID ou e-mail do contato">
   </app-input>
 
   <div class="actions">
     <app-button
       type="submit"
       label="Buscar"
-      [disabled]="form.invalid || loading">
+      [disabled]="!canSearch">
     </app-button>
 
     <app-button
       type="button"
-      label="Limpar"
-      [disabled]="loading || !hasIdValue"
+      label="Apagar"
+      [disabled]="!canClear"
       (click)="clear()">
     </app-button>
   </div>

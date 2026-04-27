@@ -44,13 +44,22 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   handleInput(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.value = input.value;
-    this.onChange(this.value);
+    const target = event.target as HTMLInputElement | HTMLTextAreaElement;
+    this.updateValue(target.value);
+  }
+
+  handleChange(event: Event): void {
+    const target = event.target as HTMLInputElement | HTMLTextAreaElement;
+    this.updateValue(target.value);
   }
 
   handleBlur(): void {
     this.onTouched();
+  }
+
+  private updateValue(value: string): void {
+    this.value = value;
+    this.onChange(this.value);
   }
 
 }

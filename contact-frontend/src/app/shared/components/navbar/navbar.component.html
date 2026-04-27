@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="navbar">
+  <a class="brand" routerLink="/">Contact Queue</a>
+
+  <span class="spacer"></span>
+
+  <a
+    mat-button
+    routerLink="/"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }">
+    Novo Contato
+  </a>
+
+  <a
+    mat-button
+    routerLink="/list-all"
+    routerLinkActive="active-link">
+    Listagem
+  </a>
+</mat-toolbar>

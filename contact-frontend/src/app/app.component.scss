@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f3f6fb;
+}
+
+.app-content {
+  padding: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 1rem;
+  }
+}

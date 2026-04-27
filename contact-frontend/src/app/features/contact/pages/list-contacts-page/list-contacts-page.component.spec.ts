@@ -11,7 +11,8 @@ describe('ListContactsPageComponent', () => {
   let fixture: ComponentFixture<ListContactsPageComponent>;
   const contactServiceMock = {
     getContact: jasmine.createSpy('getContact').and.returnValue(of([])),
-    getContactById: jasmine.createSpy('getContactById')
+    getContactById: jasmine.createSpy('getContactById'),
+    getContactByEmail: jasmine.createSpy('getContactByEmail')
   };
   const notificationServiceMock = {
     error: jasmine.createSpy('error')

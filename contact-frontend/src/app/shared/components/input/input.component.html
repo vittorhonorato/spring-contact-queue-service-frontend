@@ -1,23 +1,29 @@
 <mat-form-field [appearance]="appearance">
   <mat-label>{{label}}</mat-label>
-  <input matInput
-  matInput
-    [type]="type"
-    [placeholder]="placeholder"
-    [value]="value"
-    [disabled]="disabled"
-    (input)="handleInput($event)"
-    (blur)="handleBlur()"
-  >
 
-  <textarea
-    *ngIf="multiline"
-    matInput
-    [rows]="rows"
-    [placeholder]="placeholder"
-    [value]="value"
-    [disabled]="disabled"
-    (input)="handleInput($event)"
-    (blur)="handleBlur()"
-  ></textarea>
+  <ng-container *ngIf="!multiline; else multilineField">
+    <input
+      matInput
+      [type]="type"
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="disabled"
+      (input)="handleInput($event)"
+      (change)="handleChange($event)"
+      (blur)="handleBlur()"
+    >
+  </ng-container>
+
+  <ng-template #multilineField>
+    <textarea
+      matInput
+      [rows]="rows"
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="disabled"
+      (input)="handleInput($event)"
+      (change)="handleChange($event)"
+      (blur)="handleBlur()"
+    ></textarea>
+  </ng-template>
 </mat-form-field>

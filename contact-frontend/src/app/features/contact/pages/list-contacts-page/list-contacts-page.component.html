@@ -1,7 +1,7 @@
 <app-contact-search
   [loading]="loading"
-  (searchById)="searchContactById($event)"
-  (resetSearch)="loadAllContacts()">
+  (search)="searchContact($event)"
+  (clearSearch)="loadAllContacts()">
 </app-contact-search>
 
 <app-loading [isLoading]="loading"></app-loading>

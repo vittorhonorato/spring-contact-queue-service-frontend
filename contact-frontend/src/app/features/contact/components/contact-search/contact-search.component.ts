@@ -8,31 +8,36 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactSearchComponent {
   @Input() loading = false;
-  @Output() searchById = new EventEmitter<string>();
-  @Output() resetSearch = new EventEmitter<void>();
+  @Output() search = new EventEmitter<string>();
+  @Output() clearSearch = new EventEmitter<void>();
 
   constructor(private readonly fb: FormBuilder) {}
 
   readonly form = this.fb.nonNullable.group({
-    id: ['', [Validators.required]]
+    query: ['', [Validators.required]]
   });
 
-  get hasIdValue(): boolean {
-    return this.form.getRawValue().id.trim().length > 0;
+  get canSearch(): boolean {
+    return this.form.controls.query.value.trim().length > 0 && !this.loading;
+  }
+
+  get canClear(): boolean {
+    return this.form.controls.query.value.trim().length > 0 && !this.loading;
   }
 
   submit(): void {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
+    const queryControl = this.form.controls.query;
+    const query = queryControl.value.trim();
+    if (!query) {
+      queryControl.markAsTouched();
       return;
     }
 
-    const id = this.form.getRawValue().id.trim();
-    this.searchById.emit(id);
+    this.search.emit(query);
   }
 
   clear(): void {
     this.form.reset();
-    this.resetSearch.emit();
+    this.clearSearch.emit();
   }
 }

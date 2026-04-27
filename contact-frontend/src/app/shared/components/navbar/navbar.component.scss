@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+}
+
+.brand {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a[mat-button] {
+  border-radius: 10px;
+}
+
+a[mat-button].active-link {
+  background: rgba(255, 255, 255, 0.2);
+}
