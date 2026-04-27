@@ -23,6 +23,9 @@ import { ContactListComponent } from './features/contact/components/contact-list
 import { ContactSearchComponent } from './features/contact/components/contact-search/contact-search.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatTooltipModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

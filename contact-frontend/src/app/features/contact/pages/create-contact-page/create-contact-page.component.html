@@ -1,4 +1,117 @@
-<app-contract-form
-  [loading]="loading"
-  (formSubmit)="submit($event)">
-</app-contract-form>
+<div class="landing-page">
+  <section class="hero-section">
+    <div class="hero-content">
+      <p class="eyebrow">Plataforma de gestao de contatos</p>
+      <h1>Transforme mensagens em atendimento organizado e rastreavel</h1>
+      <p class="hero-description">
+        O Contact Queue centraliza solicitacoes, melhora a visibilidade do atendimento e ajuda equipes a responder com
+        mais velocidade e consistencia.
+      </p>
+
+      <div class="hero-actions">
+        <button mat-raised-button color="primary" type="button" (click)="scrollToForm()">
+          Comecar agora
+        </button>
+
+        <a mat-stroked-button color="primary" routerLink="/list-all">
+          Ver listagem de contatos
+        </a>
+      </div>
+
+      <div class="highlight-list">
+        <div class="highlight-item" *ngFor="let item of heroHighlights">
+          <mat-icon>check_circle</mat-icon>
+          <span>{{ item }}</span>
+        </div>
+      </div>
+    </div>
+
+    <mat-card class="hero-card">
+      <mat-card-header>
+        <mat-card-title>Por que usar o Contact Queue</mat-card-title>
+        <mat-card-subtitle>Ganhos praticos para o time no dia a dia</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="metric-item" *ngFor="let metric of heroMetrics">
+          <mat-icon>{{ metric.icon }}</mat-icon>
+          <div>
+            <h3>{{ metric.title }}</h3>
+            <p>{{ metric.description }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <section class="content-section">
+    <h2>Entenda o produto</h2>
+    <p class="section-description">
+      Uma plataforma pensada para transformar contatos recebidos em um fluxo claro de atendimento, sem perder contexto
+      e sem depender de planilhas manuais.
+    </p>
+
+    <div class="cards-grid cards-grid--three">
+      <mat-card class="content-card" *ngFor="let card of overviewCards">
+        <div class="content-card-header">
+          <span class="icon-badge">
+            <mat-icon class="content-card-icon">{{ card.icon }}</mat-icon>
+          </span>
+        </div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Beneficios e diferenciais</h2>
+    <p class="section-description">
+      Desenvolvido para garantir seguranca, praticidade e agilidade em todo o ciclo, desde o registro ate a consulta.
+    </p>
+
+    <div class="cards-grid cards-grid--four">
+      <mat-card class="content-card" *ngFor="let card of benefitCards">
+        <div class="content-card-header">
+          <span class="icon-badge">
+            <mat-icon class="content-card-icon">{{ card.icon }}</mat-icon>
+          </span>
+        </div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="content-section workflow-section">
+    <h2>Como funciona na pratica</h2>
+    <p class="section-description workflow-description">
+      Um fluxo simples em tres etapas para registrar, acompanhar e consultar as solicitacoes.
+    </p>
+    <div class="steps-grid">
+      <mat-card class="step-card" *ngFor="let step of workflowSteps; let index = index">
+        <div class="step-card-header">
+          <span class="step-index">0{{ index + 1 }}</span>
+        </div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="contact-section" #contactFormSection>
+    <div class="contact-intro-text">
+      <h3>Comece agora com sua primeira solicitacao</h3>
+      <p>
+        Preencha o formulario abaixo para registrar um novo contato e acompanhar sua demanda na listagem completa.
+      </p>
+    </div>
+
+    <app-contract-form
+      [loading]="loading"
+      (formSubmit)="submit($event)">
+    </app-contract-form>
+  </section>
+</div>
