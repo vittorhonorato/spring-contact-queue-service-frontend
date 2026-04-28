@@ -1,0 +1,42 @@
+<section class="error-tracking-page">
+  <mat-card class="page-header">
+    <div class="header-content">
+      <div class="header-copy">
+        <span class="header-kicker">
+          <mat-icon>error_outline</mat-icon>
+          Monitoramento de falhas
+        </span>
+
+        <h1>Tracking de erros</h1>
+
+        <p>
+          Aqui voce acompanha os contatos com status ERROR e visualiza o motivo para facilitar diagnostico e correcao.
+        </p>
+
+        <div class="header-badges">
+          <span class="badge badge--error">Status ERROR</span>
+          <span class="badge">Registros: {{ errors.length }}</span>
+        </div>
+      </div>
+
+      <div class="header-visual" aria-hidden="true">
+        <mat-icon>report_problem</mat-icon>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="page-tip">
+    <mat-card-content>
+      <p>
+        Dica: passe o mouse sobre o motivo para ver o texto completo quando estiver truncado.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <app-loading [isLoading]="loading"></app-loading>
+
+  <app-error-tracking-list
+    [errors]="errors"
+    [displayedColumns]="displayedColumns">
+  </app-error-tracking-list>
+</section>

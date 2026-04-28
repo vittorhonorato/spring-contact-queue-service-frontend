@@ -26,6 +26,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { ErrorTrackingPageComponent } from './features/contact/pages/error-tracking-page/error-tracking-page.component';
+import { ErrorTrackingListComponent } from './features/contact/components/error-tracking-list/error-tracking-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatDividerModule } from '@angular/material/divider';
     CreateContactPageComponent,
     ContactListComponent,
     ContactSearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    ErrorTrackingPageComponent,
+    ErrorTrackingListComponent
   ],
   imports: [
     BrowserModule,

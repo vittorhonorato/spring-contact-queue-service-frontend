@@ -1,0 +1,133 @@
+:host {
+  display: block;
+}
+
+.error-tracking-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem 1.4rem;
+  border-radius: 18px;
+  border: 1px solid #d7e2f0;
+  background: linear-gradient(135deg, #f8fbff 0%, #f4f9ff 60%, #ffffff 100%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b91c1c 0%, #ef4444 35%, #f59e0b 100%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+.header-kicker mat-icon {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.header-copy h1 {
+  margin: 0.4rem 0 0;
+  color: #0f172a;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.header-copy p {
+  margin: 0.55rem 0 0;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 860px;
+}
+
+.header-badges {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: #eef2ff;
+  border: 1px solid #dbe4ff;
+  color: #334155;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge--error {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.header-visual {
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #fff1f2 0%, #ffe4e6 100%);
+  border: 1px solid #fecdd3;
+}
+
+.header-visual mat-icon {
+  color: #b91c1c;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.page-tip {
+  border-radius: 12px;
+  border: 1px solid #dbe7f3;
+  background: #fbfdff;
+}
+
+.page-tip p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1rem;
+  }
+
+  .header-visual {
+    display: none;
+  }
+}
